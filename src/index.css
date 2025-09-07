@@ -1,0 +1,220 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Professional Portfolio Design System - Navy Blue Theme */
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 215 28% 17%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 215 28% 17%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 215 28% 17%;
+
+    --primary: 215 84% 26%;
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 215 16% 96%;
+    --secondary-foreground: 215 28% 17%;
+
+    --muted: 215 16% 96%;
+    --muted-foreground: 215 16% 46%;
+
+    --accent: 32 95% 44%;
+    --accent-foreground: 215 84% 26%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 215 20% 92%;
+    --input: 215 20% 92%;
+    --ring: 215 84% 26%;
+
+    /* Professional Portfolio Colors */
+    --navy: 215 84% 26%;
+    --navy-light: 215 84% 35%;
+    --navy-dark: 215 84% 18%;
+    --orange: 32 95% 44%;
+    --orange-light: 32 95% 55%;
+    --gray-50: 0 0% 98%;
+    --gray-100: 215 16% 96%;
+    --gray-200: 215 20% 92%;
+    --gray-800: 215 28% 17%;
+    --gray-900: 215 35% 12%;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--navy)), hsl(var(--navy-light)));
+    --gradient-accent: linear-gradient(135deg, hsl(var(--orange)), hsl(var(--orange-light)));
+    --gradient-subtle: linear-gradient(180deg, hsl(var(--gray-50)), hsl(var(--gray-100)));
+
+    /* Shadows */
+    --shadow-soft: 0 4px 6px -1px hsl(var(--navy) / 0.1), 0 2px 4px -1px hsl(var(--navy) / 0.06);
+    --shadow-medium: 0 10px 15px -3px hsl(var(--navy) / 0.1), 0 4px 6px -2px hsl(var(--navy) / 0.05);
+    --shadow-large: 0 25px 50px -12px hsl(var(--navy) / 0.25);
+    --shadow-glow: 0 0 40px hsl(var(--orange) / 0.15);
+
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-fast: all 0.15s ease-out;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  /* Hero Section Styles */
+  .hero-title {
+    @apply text-5xl md:text-7xl font-bold bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-transparent;
+  }
+
+  .hero-subtitle {
+    @apply text-xl md:text-2xl text-accent font-semibold;
+  }
+  .hero-tagline {
+    @apply text-lg text-white max-w-2xl mx-auto leading-relaxed;
+  }
+
+  /* Section Styles */
+  .section-title {
+    @apply text-3xl md:text-4xl font-bold text-primary mb-4;
+  }
+
+  .section-subtitle {
+    @apply text-lg text-muted-foreground mb-12;
+  }
+
+  /* Card Styles */
+  .project-card {
+    @apply bg-card rounded-xl p-6 hover:shadow-large transition-all duration-300 hover:-translate-y-1 border border-border;
+  }
+
+  .skill-card {
+    @apply bg-gradient-to-br from-secondary to-secondary/50 rounded-lg p-4 text-center hover:from-accent/10 hover:to-accent/5 transition-all duration-300;
+  }
+
+  /* Button Styles */
+  .btn-primary {
+    @apply bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-3 rounded-lg font-semibold transition-all duration-300 hover:shadow-glow;
+  }
+
+  .btn-secondary {
+    @apply bg-transparent border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground px-6 py-3 rounded-lg font-semibold transition-all duration-300;
+  }
+
+  .btn-accent {
+    @apply bg-accent hover:bg-accent/90 text-accent-foreground px-6 py-3 rounded-lg font-semibold transition-all duration-300 hover:shadow-glow;
+  }
+
+  /* Animation Classes */
+  .fade-in {
+    animation: fadeIn 0.8s ease-out forwards;
+  }
+
+  .slide-up {
+    animation: slideUp 0.6s ease-out forwards;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Hover Effects */
+  .hover-lift {
+    @apply transition-transform duration-300 hover:-translate-y-2;
+  }
+
+  .hover-glow {
+    @apply transition-all duration-300 hover:shadow-glow;
+  }
+}
